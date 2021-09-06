@@ -20,8 +20,8 @@ const makeObjectDeepCopy = (copiedObj) => {
 
 
 
-const res = [];
 function selectFromInterval(arr, startRange, endRange) {
+  const res = [];
   if (startRange < endRange) {
     for (let elem of arr) {
       if (elem >= startRange && elem <= endRange) {
@@ -32,18 +32,18 @@ function selectFromInterval(arr, startRange, endRange) {
         throw new Error("One or both of the interval values are not a number");
       }
     }
-    res.sort((a, b) => a - b);
+    return console.log(res.sort((a, b) => a - b));
   } else {
-    for (let elem of arr) {
-      if (elem <= startRange && elem >= endRange) {
-        res.push(elem);
-      } else if (elem !== +elem) {
-        throw new Error("Some element of the array is not a number");
-      } else if (startRange !== +startRange || endRange !== +endRange) {
-        throw new Error("One or both of the interval values are not a number");
+      for (let elem of arr) {
+        if (elem <= startRange && elem >= endRange) {
+          res.push(elem);
+        } else if (elem !== +elem) {
+          throw new Error("Some element of the array is not a number");
+        } else if (startRange !== +startRange || endRange !== +endRange) {
+          throw new Error("One or both of the interval values are not a number");
+        }
       }
-    }
-    res.sort((a, b) => a - b);
+    return console.log(res.sort((a, b) => a - b));
   }
 };
 
@@ -51,21 +51,17 @@ function selectFromInterval(arr, startRange, endRange) {
 
 
 
-let myiterable = {
+const myIterable = {
   from: 3,
   to: 7,
   *[Symbol.iterator]() {
     for (let value = this.from; value <= this.to; value++) {
       yield value;
+      if (myIterable.from !== +myIterable.from || myIterable.to !== +myIterable.to) {
+        throw new Error("Object parameters must contain numbers");
+      } else if (myIterable.from > myIterable.to) {
+        throw new Error('"from" cannot be greater then "to"');
+      }
     }
-  }
-};
-if (myiterable.from !== +myiterable.from || myiterable.to !== +myiterable.to) {
-  throw new Error("Object parameters must contain numbers");
-} else if (myiterable.from > myiterable.to) {
-  throw new Error('"from" cannot be greater then "to"');
-} else {
-  for (let item of myiterable) {
-    console.log(item);
   }
 }
