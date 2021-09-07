@@ -5,7 +5,7 @@ const makeObjectDeepCopy = (copiedObj) => {
     return copiedObj;
   }
 
-  object = {};
+  object = Array.isArray(copiedObj) ? [] : {};
 
   for (key in copiedObj) {
     value = copiedObj[key];
@@ -32,7 +32,7 @@ function selectFromInterval(arr, startRange, endRange) {
         throw new Error("One or both of the interval values are not a number");
       }
     }
-    return console.log(res.sort((a, b) => a - b));
+    return res.sort((a, b) => a - b);
   } else {
       for (let elem of arr) {
         if (elem <= startRange && elem >= endRange) {
@@ -43,7 +43,7 @@ function selectFromInterval(arr, startRange, endRange) {
           throw new Error("One or both of the interval values are not a number");
         }
       }
-    return console.log(res.sort((a, b) => a - b));
+    return res.sort((a, b) => a - b);
   }
 };
 
