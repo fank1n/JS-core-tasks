@@ -50,19 +50,19 @@ class Calculator {
     }
 
     logSum = () => {
-      return this.num1 + this.num2;
+      console.log(this.num1 + this.num2);
     }
 
     logMul = () =>{
-      return this.num1 * this.num2;
+      console.log(this.num1 * this.num2;
     }
 
     logSub = () =>{
-      return this.num1 - this.num2;
+      console.log(this.num1 - this.num2);
     }
 
     logDiv = () =>{
       if (this.num2 === 0) throw new Error ('Y = 0');
-      return this.num1 / this.num2;
+      console.log(this.num1 / this.num2);
       }
     }
