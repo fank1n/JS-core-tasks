@@ -54,7 +54,7 @@ class Calculator {
     }
 
     logMul = () =>{
-      console.log(this.num1 * this.num2;
+      console.log(this.num1 * this.num2);
     }
 
     logSub = () =>{
