@@ -91,7 +91,7 @@ class Car {
     
     shutDownEngine(){
         if(this.isStarted === false){
-            throw new Error ('The car engine is already shutted down')
+            throw new Error ('The car engine is already shutted down');
         }
         else return this.#isStarted = false;
     }
@@ -100,7 +100,7 @@ class Car {
         if (Number.isInteger(fuelValue) === true && fuelValue > 0 && (fuelValue + this.#currentFuelVolume) <= this.#maxFuelVolume){
             return this.#currentFuelVolume += fuelValue; 
         }
-        else throw new Error('Invalid amount of fuel')
+        else throw new Error('Invalid amount of fuel');
     }
 
     drive(speed, hours){
@@ -115,7 +115,7 @@ class Car {
             throw new Error ('The car cannot go that fast');
         }
         else if (this.#isStarted === false){
-            throw new Error ('The car must be started to drive')
+            throw new Error ('The car must be started to drive');
         }
         else if (this.#currentFuelVolume <= 0 || this.#fuelConsumption * koef > this.#currentFuelVolume){
             throw new Error('Not enough fuel');
